@@ -1,0 +1,11 @@
+#!name=FixLocation
+#!desc=禁止以下主机连接，让iPhone依赖MFi设备获取定位
+#!author=tabmos
+#!category=tabmos
+
+[Host]
+gs-loc.apple.com = 127.0.0.1
+gs-loc-cn.apple.com = 127.0.0.1
+gsp-ssl.ls.apple.com = 127.0.0.1
+bluedot.is.autonavi.com = 127.0.0.1
+bluedot.is.autonavi.com.gds.alibabadns.com = 127.0.0.1

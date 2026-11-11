@@ -1,0 +1,26 @@
+#!name=Apple Intelligence
+#!desc=Apple Intelligence 代理规则
+#!author=tabmos
+#!arguments=rule:PROXY
+#!arguments-desc=rule: Apple Intelligence的出站策略组
+#!category=tabmos
+
+[Rule]
+DOMAIN, guzzoni.apple.com, {{{rule}}} // Siri Dictation
+DOMAIN, mask-api.fe.apple-dns.net, {{{rule}}} // iCloud Private Relay
+DOMAIN, mask-api.icloud.com, {{{rule}}} // iCloud Private Relay
+DOMAIN, mask.apple-dns.net, {{{rule}}} // iCloud Private Relay
+DOMAIN, mask-t.apple-dns.net, {{{rule}}} // iCloud Private Relay
+DOMAIN, api-siri-prod.apple.com, {{{rule}}} // Siri backend API
+DOMAIN-SUFFIX, smoot.apple.com, {{{rule}}} // Apple Search Service
+DOMAIN-SUFFIX, siri.apple.com, {{{rule}}} // Siri
+DOMAIN-SUFFIX, mask.icloud.com, {{{rule}}} // iCloud Private Relay
+DOMAIN-SUFFIX, mask-h2.icloud.com, {{{rule}}} // iCloud Private Relay
+DOMAIN-SUFFIX, ls.apple.com, {{{rule}}} // Apple Location Service
+DOMAIN-SUFFIX, apps.mzstatic.com, {{{rule}}} // App Store
+DOMAIN-SUFFIX, apple-relay.apple.com, {{{rule}}} // Apple Private Cloud Compute
+DOMAIN-SUFFIX, apple-relay.cloudflare.com, {{{rule}}} // Apple Private Cloud Compute
+DOMAIN-SUFFIX, apple-relay.fastly-edge.com, {{{rule}}} // Apple Private Cloud Compute
+DOMAIN-SUFFIX, apple-relay.akamaized.net, {{{rule}}} // Apple Private Cloud Compute
+DOMAIN-SUFFIX, apple-relay.mask.apple-dns.net, {{{rule}}} // Apple Private Cloud Compute
+DOMAIN-SUFFIX, cp4.cloudflare.com, {{{rule}}} // Apple Private Cloud Compute
