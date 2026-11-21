@@ -1,5 +1,6 @@
 #!name=Apple Mail BIMI (精简版)
 #!desc=仅代理 Apple Mail 隐私保护中继与地区判定域名，解决 BIMI/品牌图标显示问题，不影响 iCloud 同步流量与国内地图。
+#!author=tabmos
 #!system=ios,macos
 #!arguments=Policy:PROXY
 #!arguments-desc=Policy: 填写你的海外代理策略组名称（如 Proxy、US 等，区分大小写）
