@@ -1,0 +1,26 @@
+#!name=Apple Mail BIMI (完整版)
+#!desc=完整代理 Apple Mail 隐私保护中继、地区判定、Apple Business Connect 品牌资源及 iCloud 邮件内容缓存。注意：会接管 iCloud 同步流量及部分地图域名。
+#!system=ios,macos
+#!arguments=Policy:PROXY
+#!arguments-desc=Policy: 填写你的海外代理策略组名称（如 Proxy、US 等，区分大小写）
+#!category=tabmos
+
+[Rule]
+# 1. 邮件隐私保护与中继代理
+DOMAIN,mask.icloud.com,{{{Policy}}}
+DOMAIN,mask-h2.icloud.com,{{{Policy}}}
+DOMAIN,mask-api.icloud.com,{{{Policy}}}
+DOMAIN,mask.apple-dns.net,{{{Policy}}}
+
+# 2. 地区判定与 Apple Business Connect 品牌资源
+DOMAIN,gspe1-ssl.ls.apple.com,{{{Policy}}}
+DOMAIN,gs-loc.apple.com,{{{Policy}}}
+DOMAIN-SUFFIX,ls.apple.com,{{{Policy}}}
+DOMAIN-SUFFIX,cdn.apple-mapkit.com,{{{Policy}}}
+DOMAIN,configuration.apple.com,{{{Policy}}}
+
+# 3. iCloud 内容缓存（会消耗 iCloud 照片/云盘同步流量）
+DOMAIN-SUFFIX,icloud-content.com,{{{Policy}}}
+
+# 可选：如所用节点不支持 UDP 转发，取消下行注释以屏蔽 QUIC 并强制回退至 TCP
+AND,((DOMAIN,mask.icloud.com), (PROTOCOL,UDP)),REJECT-NO-DROP
